@@ -26,4 +26,4 @@
 .ruby-version
 
 # database
-/config/database.yml
+# /config/database.yml

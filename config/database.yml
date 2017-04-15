@@ -13,3 +13,9 @@ development:
 test:
   <<: *default
   database: northern_test
+
+production:
+  adapter: postgresql
+  database: northern_production
+  host: localhost
+  password:
