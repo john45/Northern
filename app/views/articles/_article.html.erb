@@ -1,0 +1,28 @@
+  <table id="article-<%= article.id %>">
+    <tr>
+      <td>
+        <%= image_tag 'default_avatar_50x50.jpg', class: 'avatar', size: '50x50' %>
+      </td>
+      <td>
+        <ul>
+          <li class='element title'>
+            <%= link_to article.user.name, '#' %><br>
+          </li>
+          <li class='element'>
+            <b><%= link_to article.title, article_path(article) %></b><br>
+          </li>
+          <li class='element'>
+            <%= article.body %><br>
+          </li>
+          <li class='element posted_time'>
+              Posted <%= time_ago_in_words(article.created_at) unless article.created_at.blank? %> ago.
+          </li>
+          <li class='element'>
+              <%= link_to 'edit', edit_article_path(article), class: 'in_article edit' %>
+              <%= link_to 'delete', article_path(article), class: 'in_article delete' , method: 'DELETE' %>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+<hr>

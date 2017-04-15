@@ -1,0 +1,26 @@
+<!-- <div class="container"> -->
+  <div class="col-md-4">
+    <div class="row user_name">
+      <%= @user.name %>
+    </div>
+    <div class="row avatar">
+      <%= image_tag 'default_avatar.jpg', class: 'avatar', size: '200x200' %>
+    </div>
+    <dev class="row some_user_detail">
+      <%= pluralize(@user.articles.count, "article") %>
+    </dev>
+    <dev class="row form">
+      <div class="error">
+        <% if flash[:error] %>
+          <%= flash[:error] %>
+        <% end %>
+      </div>
+      <%= render 'feed/form_for_article' %>
+    </dev>
+  </div>
+
+
+  <div class="col-md-8">
+    <%= render 'feed/right_panel' %>
+  </div>
+<!-- </div> -->

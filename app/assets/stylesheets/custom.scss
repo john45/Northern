@@ -1,3 +1,40 @@
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1;
+  border-top: 1px solid #BABDB6;
+}
+
+li.element {
+  list-style-type: none;
+  text-align: left;
+}
+
 .center {
   text-align: center;
+}
+
+.posted_time {
+  font: 11px arial, sans-serif;
+}
+
+a.in_article:link {
+ color: black;
+}
+
+a.in_article:visited {
+ color: black;
+}
+
+a.edit:hover {
+ color: green;
+}
+
+a.delete:hover {
+ color: red;
+}
+
+
+a.in_article:active {
+ color: black;
 }

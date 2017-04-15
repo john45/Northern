@@ -1,0 +1,11 @@
+<%= form_for @article do |f| %>
+  <div class="row title">
+    <%= f.text_field :title, size: '30' %>
+  </div>
+  <div class="row body">
+    <%= f.text_area :body, size: '30' %><br>
+  </div>
+  <div class="row submit">
+    <%= f.submit 'create article' %>
+  </div>
+<% end %>
