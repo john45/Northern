@@ -18,4 +18,5 @@ production:
   adapter: postgresql
   database: northern_production
   host: localhost
+  encoding: utf8
   password:

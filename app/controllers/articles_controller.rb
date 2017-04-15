@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_article, only: [:show, :destroy]
+  before_action :get_article, only: [:show, :destroy, :edit, :update]
 
   def create
     @article = Article.new article_save_params
@@ -15,7 +15,18 @@ class ArticlesController < ApplicationController
   end
 
   def show
+  end
 
+  def edit
+  end
+
+  def update
+    @article.update_attributes article_save_params
+    if @article.errors.any?
+      render :edit
+    else
+      redirect_to @article
+    end
   end
 
   def destroy

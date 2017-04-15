@@ -1,6 +1,7 @@
 Rails Task #4
 Adamenko E
 Ukraine, Cherkasy
+https://stark-tundra-58083.herokuapp.com/
 
 General - Rails_task - # 4
 Task Definition
@@ -16,6 +17,7 @@ Functional Requirements:
 6. User should be able to follow other users;
 7. User should be able to see the list of followed users, with last article of each user and last comment of shown article
 8. User should be able to see articles of followed users in chronological order;
+
 Technical Requirements
 1. It should be a WEB application:
 1. For the client side, use HTML5, CSS3, Bootstrap (AngularJS is better, or React); (other libraries is allowed, if required)
