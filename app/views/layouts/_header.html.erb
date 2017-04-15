@@ -1,36 +1,26 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
+
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar">1</span>
-        <span class="icon-bar">2</span>
-        <span class="icon-bar">3</span>
-      </button>
-      <%= link_to 'SoftGroup', class: "navbar-brand" %>
-      <!-- <a class="navbar-brand" href="#">SoftGroup</a> -->
+      <%= link_to 'Northern', root_path, class: "navbar-brand" %>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
-      <% unless true %>
+
+      <% if user_signed_in? %>
+
         <div class="navbar-form navbar-right">
-          <%= link_to 'Sign Out', class: 'btn btn-warning ' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', class: 'btn btn-warning' %>
         </div>
 
       <% else %>
 
-        <%= form_tag '#', class: 'navbar-form navbar-right' do %>
-          <div class="form-group">
-            <%= text_field_tag 'email', nil, class: 'form-control', placeholder: 'Email' %>
-          </div>
-          <div class="form-group">
-            <%= password_field_tag 'password', nil, class: 'form-control', placeholder: 'Password' %>
-          </div>
-          <%= submit_tag 'Sign in', class: 'btn btn-success' %>
-        <% end %>
+        <div class="navbar-form navbar-right">
+          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-success' %>
+        </div>
 
        <% end %>
 
-
-    </div><!--/.navbar-collapse -->
+    </div>
   </div>
 </nav>
