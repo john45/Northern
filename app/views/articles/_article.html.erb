@@ -14,6 +14,17 @@
           <li class='element'>
             <%= article.body %><br>
           </li>
+
+          <% if article.attach_identifier =~ /(png|jpg)$/ %>
+            <li class='element attach'>
+              <%= link_to image_tag(article.attach, size: '100x50'), '#' %><br>
+            </li>
+          <% else %>
+            <li class='element attach'>
+            <%= link_to article.attach_identifier, article.attach.url %><br>
+          </li>
+          <% end %>
+
           <li class='element posted_time'>
               Posted <%= time_ago_in_words(article.created_at) unless article.created_at.blank? %> ago.
           </li>

@@ -43,6 +43,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_save_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :attach)
   end
 end
