@@ -1,0 +1,8 @@
+<ul class="comment-<%= comment.id %>">
+  <li><%= comment.body %></li>
+  <li>
+    <%= link_to 'Reply', new_comment_path(parent_id: comment, article_id: @article.id) %> |
+    <%= link_to 'delete', comment, data: { confirm: 'Are you shure?' },
+                                   method: 'DELETE' %>
+  </li>
+</ul>

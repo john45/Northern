@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_article, only: [:show, :destroy, :edit, :update]
+  before_action :get_article, only: %i[show destroy edit update]
 
   def create
     @article = Article.new article_save_params
@@ -15,10 +17,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = @article.comments.build
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @article.update_attributes article_save_params
@@ -34,7 +36,6 @@ class ArticlesController < ApplicationController
     flash[:success] = 'Remove article success'
     redirect_to feed_path
   end
-
 
   private
 

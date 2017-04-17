@@ -1,3 +1,13 @@
 <b><%= @article.title %></b><br>
+
 <%= @article.body %>
 
+<hr>
+
+Comments:<br>
+
+<% unless @article.comments.empty? %>
+  <%= nested_comments @article.comments.arrange(order: :created_at) %>
+<% end %>
+
+<%= render 'comments/form_for_new_comment' %>

@@ -1,7 +1,7 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
-  def show
-  end
+class UsersController < ApplicationController
+  def show; end
 
   def edit
     @user = current_user if current_user == User.find_by_id(params[:id])
@@ -16,9 +16,7 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
-
 
   def save_attributes
     params.require(:user).permit(:name)
